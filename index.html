@@ -179,31 +179,24 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
-          </p>
-          <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
-          </p>
-          <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
+            World action models provide a promising learning paradigm for robotic manipulation by
+            jointly modeling future observations and robot actions. However, most existing methods
+            operate in 2D image spaces, making it difficult to explicitly capture spatial scene
+            physical dynamics, maintain cross-view geometric consistency, and effectively align
+            visual observations with robot actions. To address this, we propose GSWAM, a world
+            action model based on 3D Gaussian Splatting, which jointly models scene dynamics and
+            robot actions in a unified 3D space. We first compress 3DGS scenes into geometrically
+            consistent latent representations using GSVAE, which is regularized by cross-view
+            correspondence constraints. Furthermore, we align scene and action tokens into the
+            shared anchored space, enabling GSWAM to explicitly model the joint distribution
+            between 3D scene dynamics and robot actions. Based on this representation, we design a
+            3D-anchor-based spatial diffusion transformer and introduce a relative attention
+            mechanism to model spatial interactions between scenes and actions. We further employ
+            decoupled flow timesteps for the scene and action modalities, allowing the model to
+            jointly learn scene-action generation and action-conditioned future scene prediction.
+            Experiments on both simulated and real-world robotic manipulation tasks demonstrate
+            that GSWAM outperforms representative existing methods in both action generation and
+            future scene prediction.
           </p>
         </div>
       </div>
